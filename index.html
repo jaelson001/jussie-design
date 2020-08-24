@@ -67,7 +67,7 @@
 					</p>
 					<p class="gallery-card-social">
 						<a class="link" href="https://www.instagram.com/jussie125/" target="_blank"> <img src="insta.png">@jussie125</a>
-						<a class="link" href="#nenhum"> <img src="whats.png"> Link social</a>
+						<a class="link" href="https://wa.me/5583996411212?text=Ola,%20digite%20sua%20mensagem%20aqui" target="_blank"> <img src="whats.png"> Peça o seu</a>
 						<a class="link" href="#nenhum"> <img src="insta.png"> Link social</a>
 					</p>
 				</div>
@@ -88,7 +88,7 @@
 					</p>
 					<p class="gallery-card-social">
 						<a class="link" href="https://www.instagram.com/jussie125/" target="_blank"> <img src="insta.png">@jussie125</a>
-						<a class="link" href="#nenhum"> <img src="whats.png"> Link social</a>
+						<a class="link" href="https://wa.me/5583996411212?text=Ola,%20digite%20sua%20mensagem%20aqui" target="_blank"> <img src="whats.png"> Peça o seu</a>
 						<a class="link" href="#nenhum"> <img src="insta.png"> Link social</a>
 					</p>
 				</div>
@@ -109,7 +109,7 @@
 					</p>
 					<p class="gallery-card-social">
 						<a class="link" href="https://www.instagram.com/jussie125/" target="_blank"> <img src="insta.png">@jussie125</a>
-						<a class="link" href="#nenhum"> <img src="whats.png"> Link social</a>
+						<a class="link" href="https://wa.me/5583996411212?text=Ola,%20digite%20sua%20mensagem%20aqui" target="_blank"> <img src="whats.png"> Peça o seu</a>
 						<a class="link" href="#nenhum"> <img src="insta.png"> Link social</a>
 					</p>
 				</div>
@@ -130,7 +130,7 @@
 					</p>
 					<p class="gallery-card-social">
 						<a class="link" href="https://www.instagram.com/jussie125/" target="_blank"> <img src="insta.png">@jussie125</a>
-						<a class="link" href="#nenhum"> <img src="whats.png"> Link social</a>
+						<a class="link" href="https://wa.me/5583996411212?text=Ola,%20digite%20sua%20mensagem%20aqui" target="_blank"> <img src="whats.png"> Peça o seu</a>
 						<a class="link" href="#nenhum"> <img src="insta.png"> Link social</a>
 					</p>
 				</div>
@@ -142,7 +142,7 @@
 			<h2 class="title">Contato</h2>
 		</div>
 		<div class="row">
-			<a href="#galeria" class="col-md-4 col-sm-12 apresentecao">
+			<a href="https://wa.me/5583996411212?text=Ola,%20digite%20sua%20mensagem%20aqui" target="_blank" class="col-md-4 col-sm-12 apresentecao">
 				<h2 class="d-3 session-title">Peça o seu</h2>
 				<p class="d-6">
 					Converse comigo no whatsapp e encomende um desenho de si ou de alguém pra presente!
@@ -175,8 +175,15 @@
 	$('.gallery-card-close').click(function(){
 		$(this).parent().toggleClass('ativo');
 	});
+	$('.menu-item').click(function(){
+		$('#menu-wrapper').toggleClass('show');
+	});
+
 </script>
 <style type="text/css">
+	:root{
+		--primary-color: #afafaf/*#3869d6*/;
+	}
 	html{
 		scroll-behavior: smooth;
 	}
@@ -201,11 +208,15 @@
 		display: flex;
 		justify-content: space-between;
 	}
+	.navbar-collapse{
+		flex-grow: 0;
+	}
 	.navbar-nav .menu-item,
 	.navbar-nav .menu-item:hover{
 		padding:5px 15px;
 		color: #333;
 		text-decoration: none;
+		position: relative;
 	}
 	.navbar-nav .menu-item:after{
 		content: "";
@@ -216,6 +227,7 @@
 		bottom: 0px;
 		left: 0px;
 		height: 2px;
+
 	}
 	.navbar-nav .menu-item:hover:after{
 		width: 100%; 
@@ -263,6 +275,7 @@
 		font-style: italic;
 		font-weight: 500;
 		margin-bottom: 80px;
+		color: var(--primary-color);
 	}
 
 	.gallery{
@@ -294,6 +307,7 @@
 		width: 100%;
 		padding: 15px;
 		margin-bottom: 20px;
+		color:var(--primary-color);
 	}
 	hr{
 		border-top: 2px solid #000;
@@ -336,6 +350,7 @@
 		max-width: 36px;
 	}
 	.gallery-card.ativo{
+		z-index: 1000;
 		z-index: 99;
 		background: #fff;
 		padding: 20px 5%;
@@ -417,6 +432,32 @@
 		font-style: italic;
 		font-weight: bold;
 	}
+	@media (max-width: 800px){
+		#menu-wrapper.show #menu {
+			background: #fff;
+			position: fixed;
+			top: 0;
+			height: 100vh;
+			width: 100vw;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+			align-content: center;
+			left: 0;
+			z-index: 99;
+		}
+		.menu-item{
+			width: 100%;
+			margin:20px;
+			font-size: 32px;
+		}
+		.navbar-toggler:not(.collapsed){
+			position: fixed;
+			z-index: 999;
+			top: 10px;
+			right:10px;
+		}
+	}
 	@media (max-width:480px){
 		#menu-wrapper.show #menu {
 			background: #fff;
@@ -454,14 +495,17 @@
 			height: 20vh;
 			margin-bottom: 20px;
 		}
+		.apresentecao:after{
+			bottom: 0px;
+		}
 		.apresentecao:before{
-			opacity: 1;
-			right: 13px;
+			display: none;
 		}
 		h2.session-title{
 			font-size: 24px;
 		}
 		.gallery-card.ativo{
+			z-index: 1000;
 			padding-top: 40px;
 			display: flex;
 			flex-flow: row wrap;
