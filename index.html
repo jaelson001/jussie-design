@@ -182,10 +182,17 @@
 </script>
 <style type="text/css">
 	:root{
-		--primary-color: #afafaf/*#3869d6*/;
+		--primary-color: #444;/*#3869d6;*/
+		--primary-bg: #000;
 	}
 	html{
 		scroll-behavior: smooth;
+	}
+	body{
+		background-image: linear-gradient(to bottom, #fff, #eee);
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		color: var(--primary-color);
 	}
 	.container{
 		font-style: 'Montserrat', sans-serif;
@@ -214,7 +221,7 @@
 	.navbar-nav .menu-item,
 	.navbar-nav .menu-item:hover{
 		padding:5px 15px;
-		color: #333;
+		color: var(--primary-color);
 		text-decoration: none;
 		position: relative;
 	}
@@ -222,7 +229,7 @@
 		content: "";
 		transition: all 0.3s;
 		width: 0px;
-		border-top: 2px solid #333;
+		border-top: 2px solid var(--primary-color);
 		position: absolute;
 		bottom: 0px;
 		left: 0px;
@@ -235,7 +242,7 @@
 	.apresentecao,
 	.apresentecao:hover{
 		text-decoration: none;
-		color: #333;
+		color: var(--primary-color);
 		position: relative;
 		height: 30vh;
 	}
@@ -245,7 +252,7 @@
 		bottom: 0px;
 		width: 40%;
 		height: 20px;
-		border-top: 2px solid #333;
+		border-top: 2px solid var(--primary-color);
 		right: 20px;
 		transition: all 0.3s;
 	}
@@ -276,6 +283,7 @@
 		font-weight: 500;
 		margin-bottom: 80px;
 		color: var(--primary-color);
+		padding: 0px 20px;
 	}
 
 	.gallery{
@@ -288,10 +296,9 @@
 		float:left;
 		max-width: 300px;
 		margin:20px;
-		background: #fff;
 	}
 	.gallery-card:hover{
-		outline: 1px dashed #333;
+		outline: 1px dashed var(--primary-color);
 	}
 	.gallery-card-close{
 		display: none;
@@ -310,7 +317,7 @@
 		color:var(--primary-color);
 	}
 	hr{
-		border-top: 2px solid #000;
+		border-top: 2px solid var(--primary-color);
 	}
 	.gallery-card-description{
 		width: 100%;
@@ -318,6 +325,7 @@
 		flex-flow: column wrap;
 		font-weight: bold;
 		text-decoration: none;
+		color: var(--primary-color);
 	}
 	.gallery-card-content{
 		display: none;
@@ -339,7 +347,7 @@
 		font-family: "Times New Roman";
 		font-style: italic;
 		text-decoration: none;
-		color: #333;
+		color: var(--primary-color);
 	}
 	.gallery-card-social .link:hover{
 		font-weight: bold;
@@ -371,7 +379,7 @@
 		right: 20px;
 		transform: rotate(45deg);
 		font-size: 3rem;
-		color: #333;
+		color: var(--primary-color);
 		justify-content: center;
 		align-items:center;
 		background: transparent;
@@ -420,7 +428,7 @@
 		position: absolute;
 		width: 100%;
 		max-width: 400px;
-		border-top: 2px solid #333;
+		border-top: 2px solid var(--primary-color);
 		left: 50%;
 		transform: translateX(-50%);
 		top: 0;
@@ -428,7 +436,7 @@
 	.footer a,
 	.footer a:hover{
 		text-decoration: none;
-		color: #333;
+		color: var(--primary-color);
 		font-style: italic;
 		font-weight: bold;
 	}
@@ -515,7 +523,7 @@
 			overflow-y: auto;
 		}
 		.ativo .gallery-card-img{
-			border: 2px solid #333;
+			border: 2px solid var(--primary-color);
 		}
 		.ativo .gallery-card-title{
 			font-family: 'Times New Roman';
@@ -527,7 +535,7 @@
 		.ativo hr{
 			display: block;
 			width: 100%;
-			border-top: 2px solid #000;
+			border-top: 2px solid var(--primary-color);
 		}
 		.ativo .gallery-card-title,
 		.ativo .gallery-card-description {
