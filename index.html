@@ -158,7 +158,7 @@
 			<a href="#curso" class="col-md-4 col-sm-12 apresentecao">
 				<h2 class="d-3 session-title">Aprenda</h2>
 				<p class="d-6">
-					Se você quer aprender a fazer desenhos como esses, inscreva-se para meu curso.
+					Se você quer aprender a fazer desenhos como esses, clique aqui e saiba como.
 				</p>
 			</a>
 		</div>
@@ -171,10 +171,10 @@
 </body>
 <script type="text/javascript">
 	$('.gallery-card-img').click(function(){
-		$(this).parent().toggleClass('ativo');
+		$(this).parent().addClass('ativo');
 	});
 	$('.gallery-card-close').click(function(){
-		$(this).parent().toggleClass('ativo');
+		$(this).parent().removeClass('ativo');
 	});
 	$('.menu-item').click(function(){
 		$('#menu-wrapper').toggleClass('show');
@@ -286,8 +286,10 @@
 	}
 
 	.gallery{
-		display: block;
-		width: 100%;
+		display: flex;
+	    width: 100%;
+	    flex-flow: row wrap;
+	    justify-content: center;
 	}
 	.gallery-card{
 		transition: all 0.3s;
